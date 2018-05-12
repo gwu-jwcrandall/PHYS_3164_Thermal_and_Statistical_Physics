@@ -1,0 +1,787 @@
+\documentclass[fontsize=4pt]{scrartcl}
+
+\usepackage{lmodern}
+
+%\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage[margin=0.25in]{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}				%one use is for spin and and spin down arrows
+\usepackage{amssymb }
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{multicol}
+\usepackage{color,soul}
+\usepackage{siunitx}					% Scientific Notation
+\usepackage{braket}					% braket package to generate bra and ket vectors
+\usepackage{physics}				% useful for physics
+
+\def\rcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{ScriptR}}$}}}
+\def\brcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{BoldR}}$}}}
+\def\hrcurs{{\mbox{$\hat \brcurs$}}}
+
+
+\title{Electrodynamics}
+\author{Joseph Crandall}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+
+
+\colorbox{YellowGreen}{Joe Crandall's PHYS 3164 Thermal and Statistical Physics}
+\colorbox{Thistle}{Used Heavily}
+\colorbox{Cyan}{Topic}
+\colorbox{Orange}{SubTopic}
+\colorbox{Aquamarine}{KNOWTHISMATH}
+\colorbox{RubineRed}{Definition/Constant/Operator}
+\colorbox{Red}{Key Observation}
+\colorbox{LimeGreen}{Question}
+\colorbox{Periwinkle}{Proof}
+\colorbox{Yellow}{break}
+
+\colorbox{RubineRed}{canonical ensemble} 
+$z = \sum_s e^{-\epsilon_s / \tau}$
+\hl{I}
+$P(s) = \frac{1}{Z}e^{-\epsilon_s / \tau}$
+\hl{I}
+$U = \expval{\epsilon} = \sum_s \epsilon_s P(s) = \frac{1}{z} \sum_s \epsilon_s e^{-\epsilon_s / \tau} = \tau^2 \frac{\partial \ln z}{\partial \tau}$
+\hl{I}
+characteristic function: $\sigma = \ln (\Gamma)$
+\hl{I}
+\colorbox{Cyan}{w5 d1 The law of increase of energy}
+Thermal contact entropy before $\sigma_{I} = \ln(g_1(U_1,0)g_2(U_2,0))$,  $\sigma_{F} = \ln(\sum_{U_1} g_1(U_1)g_2(U-U_1)) = \ln((g_1,g_2)max)$
+\hl{I}
+when you remove a constraint you expect the entropy to increase
+\hl{I}
+Law of increase in entropy is a statistical statement, Law of Thermodynamics,
+\hl{I} 
+0th If system a is in equilibrium with system b and b is in equilibrium with system c, then a is in equilibrium with system c
+\hl{I}
+1st Energy conservation, heat is a form of energy
+\hl{I}
+2nd Law of increase of entropy, when you remove a constraint you expect the entropy increase
+\hl{I}
+3rd The entropy approaches a constant as $\tau \rightarrow 0$ and $\sigma (\tau = 0) = \ln g(\tau = 0)$
+\hl{I}
+the multiplicity of the ground state of the system
+\colorbox{Orange}{Thermal contact}
+Q. which direction is the energy flow? upon thermal contact. 
+\hl{I}
+$\tau_1 > \tau_2$
+\hl{I}
+$\sigma = \ln g$
+\hl{I}
+$\tau = \frac{\partial U}{\partial \sigma}$
+\hl{I}
+$\partial \sigma = \partial \sigma_1 + \partial \sigma_2 = \frac{\partial \sigma_1}{\partial U_1} \partial U_1+  \frac{\partial \sigma_2}{\partial U_2} \partial U_2 =\frac{\partial \sigma_1}{\partial U_1} \partial -U+  \frac{\partial \sigma_2}{\partial U_2} \partial U = (\frac{1}{\tau_2} - \frac{1}{\tau_1})\partial U \geq 0$ if $\tau_1 > \tau_2$ then $\partial U > 0$ if $\tau_1 < \tau_2$ then $\partial U < 0$
+\hl{I}
+$\partial U = (\frac{\partial U}{\partial \sigma}) \partial \sigma + (\frac{\partial U}{\partial V}) \partial V$
+\hl{I}
+$\partial U = \tau \partial \sigma - P \partial V$ (first law of thermo dynamics)
+\colorbox{Orange}{pressure}
+Quantum state $V \rightarrow V - V_0$
+\hl{I}
+$\delta U = -\frac{\partial \epsilon_s}{\partial V} \cdot \delta V$
+\hl{I}
+$\delta U = P_s \delta V$
+\hl{I}
+$P_s = -(\frac{\partial \epsilon_s}{\partial V}) $(pressure from a single quantum mechanical state)
+\hl{I}
+Pressure $P=\expval{P_s} = -(\frac{\partial U}{}\partial V)$ ($P_s$ pressure for a particular quantum state)
+\hl{I}
+$ = \sum_{s} P(s)P_s$ ($P(s)$ probability of quantum state)
+\hl{I}
+$=\sum_{s} p(s) -(\frac{\partial \epsilon_s}{\partial V})$
+\hl{I}
+$=-(\frac{\partial(\sum_{s} p(s) \epsilon_s)}{dV} = -(\frac{\partial U}{\partial V})$
+\hl{I}
+Review $\partial U = \tau \partial \sigma - P \partial v$
+\hl{I}
+\colorbox{Cyan}{w5 d2 chapter 3}
+Boltsman Distribution and Helmholts free energy, a system in equilibrium with the environment, temperature is fixed
+\hl{I}
+Q. pdf for Microstates
+\hl{I}
+S: system, $\epsilon$, $s = (s_s,s_r)$
+\hl{I}
+R: reservoir $U_0 - \epsilon$ , $P(s_s , s_R) =$ constant
+\hl{I}
+$R>>s$, $R+s$ : closed system $U_0$, $P(s_s)=\sum_{s_r}P(s_s,s_R)$
+\hl{I}
+$\frac{P(1)}{P(2)} = \frac{g_R(u_0 - \epsilon_1)}{g_R(u_0 - \epsilon_2)}$
+\hl{I}
+1,2 are Microstates of the System s
+\hl{I}
+$\frac{P(1)}{P(2)} = \frac{e^{\sigma_R (U_0 - \epsilon_1)}}{e^{\sigma_R (U_0 - \epsilon_2)}} = e^{\sigma_R (U_0 - \epsilon_1) - \sigma_R (U_0 - \epsilon_2)} $
+\hl{I}
+$\epsilon_1 << U_0, \epsilon_2 << U_0$
+\hl{I}
+$\epsilon_R (U_0 - \epsilon) \simeq \sigma_R (U_0) - \epsilon (\frac{\partial \sigma_R}{\partial U_0})$
+\hl{I}
+$\frac{P(1)}{P(2)} = e^{-(\epsilon_1 - \epsilon_2) / \tau}$
+\hl{I}
+\colorbox{RubineRed}{for canonical ensemble} 
+$z = \sum_s e^{-\epsilon_s / \tau}$
+\hl{I}
+Taylor expansion $P(s) \propto e^{-\epsilon_2 /\tau}$
+\colorbox{RubineRed}{probability of microstates in thermal equilibrium with its environment} 
+$P(s) = \frac{1}{Z}e^{-\epsilon_s / \tau}$
+\hl{I}
+$U = \expval{\epsilon} = \sum_s \epsilon_s P(s) = \frac{1}{z} \sum_s \epsilon_s e^{-\epsilon_s / \tau} = \tau^2 \frac{\partial \ln z}{\partial \tau}$
+\hl{I}
+at $\tau = 0$, the system settles in the ground state.
+\hl{I}
+$\sum_s p(s) =1 \rightarrow z = \sum_s e^{\epsilon_s /\tau}$
+\hl{I}
+$Z$: partition function
+\hl{I}
+$e^{-\epsilon_s /\tau}$: Boltsman factor
+\hl{I}
+$e^{-\epsilon_s /\tau}$
+\hl{I}
+$z = \sum_s e^{-(\epsilon_s +\Delta)/\tau} = e^{-\Delta / \tau} \sum_s e^{-\epsilon_s / \tau}$
+\hl{I}
+$P(s) \rightarrow \frac{e^{-(\epsilon_s + \Delta)\tau}}{z^{\prime}} = \frac{e^{-\epsilon_s /\tau}}{z}$
+\hl{I}
+$Z(\tau)$: high temp limit $T \rightarrow \infty$, $P(s) \rightarrow$ unifrom $=\frac{1}{z}$, Z: number of microstates in the system, low temp limit $\tau \rightarrow 0$
+\hl{I}
+$P(s) = 0 $ if $\epsilon_s \neq 0$ and $=\frac{1}{z} $ if $\epsilon_s = 0$
+\colorbox{Orange}{ex: one particle, only two states}
+state 1 energy 0, and state 2 energy $\epsilon$
+\hl{I}
+$z = 1 + e^{-\epsilon/\tau}$
+\hl{I}
+$U = \frac{1}{1+e^{-\epsilon/\tau}} (\epsilon e^{\epsilon/\tau})$
+\hl{I}
+1. microstates and energetics
+1.5 decide the ensemble
+2. z get the partition function
+3. U,... $\leftarrow z$(from partition function)
+\hl{I}
+$z=e^{-0/\tau} + e^{-\epsilon/\tau} = 1+e^{-\epsilon \tau}$
+\hl{I}
+$U = \expval{\epsilon} = \frac{\epsilon e^{-\epsilon/\tau}}{1 +e^{-\epsilon \tau}} = \frac{\tau \partial \ln z}{d\tau}$
+\hl{I}
+review $P(s) = \frac{e^{-\epsilon_s/\tau}}{z}$ and $z =\sum_s e^{-\epsilon/\tau}$
+\colorbox{Cyan}{w6 d1 how do we relate free energy F to microscopic quantities}
+$F = -\tau \ln z(B,V,N)$
+\hl{I}
+demonstrate $-\tau \ln(z) = U-\tau \sigma $
+\hl{I}
+connection with ThermoDynamics: free energy [Helmholtz free energy]
+$F \equiv U-\tau \sigma$
+\hl{I}
+$\partial U = \tau \partial \sigma - P \partial V$
+\hl{I}
+$\partial F \equiv \partial U - \partial(\tau \sigma) = \tau  \partial \sigma - P\partial v - (\tau \sigma + \sigma \partial \tau) = -\sigma \partial \tau - P \partial V$
+\hl{I}
+\colorbox{Periwinkle}{Proof}
+\hl{I}
+if we identify $\sigma = -\frac{\partial F}{\partial \tau}$
+\hl{I}
+main framework for canonical ensemble from T.D.
+$\partial F = -\sigma \partial \tau - P \partial v$
+\hl{I}
+$\sigma = -\frac{\partial F}{\partial \tau}$
+\hl{I}
+$P = -\frac{\partial F}{\partial V}$
+\hl{I}
+$F = U - \tau \sigma$
+\hl{I}
+\colorbox{Orange}{another expression of $\sigma$}
+for an isolated system $\sigma = \log g$
+for a system with a given temperature $\tau$
+$\sigma = -(\frac{\partial F}{\partial \tau}) = -\sum_s p(s) \ln p(s)$ for isolated system $p(s) = \frac{1}{g}$
+\hl{I}
+$\sigma = -\ln \frac{1}{g} \sum_s P(s) = \ln g$
+review 
+$F = -\tau \ln z(\tau)$
+\hl{I}
+$\sigma = -\frac{\partial F}{\partial \tau} \rightarrow \sigma = -\sum_{s} p(s) \ln p(s)$
+\hl{I}
+$P = -(\frac{\partial F}{\partial V})$
+\colorbox{Cyan}{w6 d2 $dU$ and ideal gas law }
+$\partial U = \partial (\sum_{s} p(s) \epsilon_s) = \sum_s \epsilon_s \partial p(s) +  \sum_s p(s) \partial \epsilon_s$
+\hl{I} 
+1st term, change in distribution on Microstates, 2. energy spectrum changes, no change in distribution
+\hl{I}
+a) lets say change V
+$\sum_s p(s) \partial \epsilon_s = \sum_s p(s) \frac{\partial \epsilon_s}{\partial v} \partial v = -p \partial v$
+\hl{I}
+proof for a quantum system
+$P_s= -\frac{\partial \epsilon_s}{\partial V}$
+\hl{I}
+for thermal system, carry out ensemble average
+$P = -\sum_s p(s) \frac{\partial \epsilon}{\partial V}= -\sum_s \frac{e^{-\epsilon_s /\tau}}{Z} \frac{\partial \epsilon}{\partial v} = -\sum_s \frac{\tau}{Z} \frac{\partial}{\partial v}e^{-\epsilon_s /\tau} = \frac{\tau}{Z} \frac{\partial z}{\partial v} = \tau (\frac{\partial \ln z}{\partial v}) = P$
+\hl{I}
+\colorbox{Periwinkle}{using canonical ensemble Proof}
+$\sum_s \epsilon_s \partial p(s) = \tau \partial \sigma$
+\colorbox{Orange}{ideal gas}
+System of particles where they do not interact with each other, point particles
+\textbf{one atom in a box}
+$V = L^3$
+\hl{I}
+$\epsilon = \frac{\hbar^2}{2M}(\frac{\pi}{L})^2 (n_x^2 + n_y^2 + n_z^2)$
+\hl{I}
+calculate partition function
+$Z_1 = \sum_{n_x} \sum_{n_y} \sum_{n_z} e^{-\frac{\hbar^2}{2M\tau} (\frac{\pi}{L})^2 (n_x^2 + n_y^2 + n_z^2)} = \sum_{n_x}  e^{-\frac{\hbar^2}{2M\tau}  n_x^2} ...$ 
+\hl{I}
+$N \rightarrow \infty$ and $v \rightarrow \infty$ where $\frac{N}{V} = constant$
+\hl{I}
+can approximate $\sum$ with $\int$
+\hl{I}
+$\sum_n e^{\alpha^2 n^2}$ where $\alpha^2 \equiv \frac{\hbar^2 \pi^2}{2mL^2 \tau}$
+\hl{I}
+$=\int_0^{\infty} \partial n e^{-\alpha^2 n^2}$
+\hl{I}
+$= \frac{1}{\alpha} \int_0^{\infty} \partial x e^{-x^2}$
+\hl{I}
+$\chi \equiv \alpha n$
+\hl{I}
+$\frac{1}{\alpha}\frac{1}{2}\pi^{1/2}$
+\hl{I}
+$Z_1 = \frac{\pi^{3/2}}{8 \alpha^3} = \frac{v}{(2\pi \hbar^2 / M\tau)^{3/2}}$
+\hl{I}
+rewrite as a ratio of two densities $n=\frac{1}{v}$
+\hl{I}
+$n_a = (\frac{M\tau}{2\pi \hbar^2})^{3/2} = \frac{1}{\lambda^3}$ quantum concentration
+\hl{I}
+$\lambda = (\frac{2\pi \hbar^2}{M\tau})^{1/2}$ where $\lambda $ is the thermal wavelength
+\hl{I}
+$F=-\tau \ln z = -\tau \ln \frac{n_q}{n}$
+\hl{I}
+$U= \tau^2 \frac{\partial \ln z}{\partial \tau} = \frac{3}{2}\tau $
+\hl{I}
+$U = \frac{3}{2} N\tau$ internal energy of a system with N particles
+\hl{I}
+$\textbf{N atoms in a box}$ if particles do not interact
+$Z_2 = \sum_{n_{x1} n_{y1} n_{z1}} \sum_{n_{x2} n_{y2} n_{z2}} e^{-(\epsilon_1 + \epsilon_2)/\tau} = z_1 \cdot z_1$
+$\textbf{N identical particles in a box}$.
+$Z_n = \frac{1}{N!} Z_1^N = \frac{1}{N!}(n_q v)^N$
+\hl{I}
+$U=\frac{3}{2}=n\tau$
+\hl{I}
+equation of state $pV = n\tau$
+\colorbox{Cyan}{w8 d1 Free energy as a force towards equilibrium}
+Helmholtz free energy F, F is a minimum for a system in thermal contact with a reservoir R, if the volume of the system is kept constant. Consider the total energy of the system plus the reservoir temperature.
+$\partial \sigma_{total} = \partial \sigma + \partial \sigma_R$
+\hl{I}
+$\partial \sigma_R = \frac{1}{\tau} \partial U_R + \frac{P}{\tau} \partial V_R$ P = pressure and given no volume change
+\hl{I}
+$\partial \sigma_{total} = \partial \sigma + \frac{1}{\tau} \partial U_R$
+\hl{I}
+$\partial U + \partial U_R = 0$ (Total energy conserved)
+\hl{I}
+$\partial \sigma_{total} = \partial \sigma + \frac{1}{\tau} \partial U_R$
+\hl{I}
+$\partial U + \partial U_R = 0 $(total energy)
+\hl{I}
+$\partial \sigma_{total} = \partial \sigma - \frac{1}{\tau} \partial U$
+\hl{I}
+$\partial \sigma_{total} = - \frac{1}{\tau} \partial F$
+\hl{I}
+$F=U-\tau \sigma$
+\hl{I}
+$\partial F = \partial U - \tau \partial \sigma - \sigma \partial \tau$
+\hl{I}
+under the condition of fixed $\tau$ and $V$
+\hl{I}
+$\partial F \leq 0 \rightarrow F$is a minimum in equilibrium
+\hl{I}
+\colorbox{RubineRed}{example using a minimization principle}
+binary model system $N_{\uparrow \uparrow}$, $N = N_{\uparrow} + N_{\downarrow}$
+\hl{I}
+$N_{\downarrow \downarrow}$, $2s = N_{\uparrow} - N_{\downarrow}$
+\hl{I}
+$U(s) = -2smB$
+\hl{I}
+U usually (internal energy) thermal average of the systems energy
+\hl{I}
+$Z=\sum_s e^{-\epsilon_s / \tau}$
+\hl{I}
+$U = \frac{\sum_s \epsilon_s e^{-\epsilon_s / \tau}}{z}$
+\hl{I}
+when given $\tau, B$ can you find $\expval{s}$
+\hl{I}
+two approaches, use canonical ensemble approach, energetics table, partition function, or minimize F with respect to s
+\hl{I}
+$F=U-\tau \sigma$
+\hl{I}
+$\sigma (s) \approx \ln  {{N}\choose{N_{\uparrow}}} = -(\frac{N}{2}+s) \ln(\frac{s}{N}+\frac{1}{2})-(\frac{N}{2} - s)\ln(\frac{1}{2} - \frac{s}{N}) $
+\hl{I}
+$U(s) \approx -2smB$
+\hl{I}
+Free energy $F(s) = U(s) - \tau \sigma (s) = -2smB + -(\frac{N}{2}+s) \tau \ln(\frac{1}{2}+\frac{s}{N}) + (\frac{N}{2} - s) \tau \ln(\frac{1}{2} - \frac{s}{N})$
+\hl{I}
+At equilibrium $F(s) \rightarrow $min. $\frac{\partial F}{\partial s} = 0$
+\hl{I}
+\colorbox{RubineRed}{remember} $\expval{s}=$ the average of the spin axis 
+\hl{I}
+$\therefore -smB + \tau \ln (\frac{n+2\expval{s}}{N-2\expval{s}}) = 0$
+\hl{I}
+and $\expval{s} = \frac{N}{2} \arctan \frac{mB}{2}$
+\colorbox{Cyan}{w8 d2 chapter 4 Planck distribution/black body radiation}
+emission spectrum of the sun, the em spectrum in thermal equilibrium within a cavity
+Strategy, canonical ensemble, identify microstates, in a cavity the eigenstates of EM waves are modes, lets first look at a single mode
+$\epsilon_s = s\hbar \omega$, $s =0,1,2,...$
+\hl{I}
+$Z = \sum_{s=0}^{\infty} e^{-s\hbar \omega/ \tau} = \frac{1}{1-e^{-\hbar \omega / \tau}}$
+\hl{I}
+$(1-x)(1+x+x^2+...)=1$ and $\therefore (1+x+x^2+...) = \frac{1}{(1-x)}$
+\hl{I}
+Average number of photons
+$\expval{s} = \frac{1}{z} \sum_{s} se^{-s\hbar \omega / \tau} = \frac{1}{e^{\hbar \omega / \tau} - 1}$ plank distribution for any number of photons in a single mode of frequency $omega$
+\hl{I}
+Average energy: $\expval{\epsilon} = \hbar \omega \expval{s} = \frac{\hbar \omega}{e^{\hbar \omega /\tau}-1}$ if $\tau >> \hbar \omega$ then $\tau$ if $\tau << \hbar \omega $ then $e^{\hbar \omega /\tau}$
+\hl{I}
+Now: in a cavity, we have multiple modes
+Q/ what are the modes, A/ From EM: For a perfectly conducting cavity of $L^3$
+\hl{I}
+$E_x = E_{x0} \sin \omega t \cos \frac{n_x \pi x}{L} \sin \frac{n_y \pi y}{L} \sin \frac{n_z \pi z}{L}$
+\hl{I}
+$E_y = E_{y0}...$
+\hl{I}
+$E_z = E_{z0}...$
+\hl{I}
+first sin is time dependence, the rest is spatial dependence
+\hl{I}
+$\nabla \cdot  \vec{E} = 0$
+\hl{I}
+$E_{x0}n_x + E_{y0}n_y + E_{z0}n_z = \vec{E}_0 \cdot \vec{n} = 0$
+field vector and n vector are perpendicular 
+\hl{I}
+For a given $\vec{N}$ we can choose two independent $\vec{\epsilon}_0$,
+$\rightarrow$ for each $\vec{n}$ two distinct modes
+\hl{I}
+Q/ how is $\omega$ related to $(n_x , n_y, n_z)$ sub. eigenmodes into wave equation
+\hl{I}
+$C^2 (\frac{\partial}{\partial x^2} + \frac{\partial}{\partial y^2} + \frac{\partial}{\partial z^2})E_z = \frac{\partial^2 E_z}{\partial \tau^2}$
+\hl{I}
+$\omega_{n_xn_yn_z} $Now consider all modes, the modes are independent
+$U = 2 \sum_{n_{x} n_{y} n_{z}} \expval{\epsilon_{n_x n_y n_z}} $
+\hl{I}
+$\sum_{n_x n_y n_z} \approx \frac{1}{8} \int_{-\infty}^{\infty} dn_x dn_y dn_z$ Integrand depends only on $n=\sqrt{(n_x^2 + n_y^2 + n_z^2)}$
+\hl{I}
+$=\frac{1}{8}\int_{0}^{\infty} 4\pi n^2 \partial n$
+\hl{I}
+$U = \frac{\pi^2 \hbar^2 c}{L} \int_{0}^{\infty} dn \frac{n^3}{e^{\frac{\hbar c \pi n}{L \tau} }-1 }$
+\hl{I}
+\colorbox{Red}{change of variable}
+$x \equiv \frac{\pi \hbar c n}{L \tau}$
+\hl{I}
+$U = \frac{\pi^2 \hbar c}{L}(\frac{\tau L}{\pi \hbar c})^4 \int_{0}^{\infty} dx \frac{x^3}{e^x - 1}$
+\hl{I}
+$U =  \frac{\pi^2 \hbar c}{L}(\frac{\tau L}{\pi \hbar c})^4 \frac{\pi^4}{15}$
+\hl{I}
+$U = V \cdot \frac{\pi^2}{15 \hbar^3 c^3} \tau^4 \propto \tau^4 \rightarrow$ stephan-Boltzmann law of radiation
+\hl{I}
+$U = v \int \partial \omega U \omega$
+\hl{I}
+$U_{\omega} = \frac{\hbar}{\pi^2 c^3} \frac{\omega^3}{e^{\hbar \omega/\tau} -1}$ (plank radiation law) $\tau = 2.73 K$
+\hl{I}
+Q/ $\sigma$ A/ at constant volume $\partial \sigma = \frac{\partial U}{\tau}$ where $\partial U = \tau \partial \sigma - P \partial v$
+\hl{I}
+$\sigma(\tau) = \int_0^{\tau} \frac{\partial u}{\tau} = \frac{4\pi^2 V}{45}(\frac{\tau}{\hbar c})^3 \propto \tau^3$
+\colorbox{Cyan}{w11 d1 Phonons in solids}
+quantum harmonic oscillator, partition function $Z = \frac{1}{1-e^{-\hbar \omega /\tau}}$
+\hl{I}
+photon gas numbers of em modes is infinite, 
+phonon gas of number of elastic modes is finite
+\hl{I}
+photon two possible polarizations, phonon longitudinal 1 and transverse 2
+\hl{I}
+$U=\frac{3\pi}{2}\int_{0}^{n_D} dn n^2 \frac{\hbar \omega_n}{e^{\hbar \omega / \tau} -1}$ 
+\hl{I}
+$\omega_n = \frac{n\pi V}{L}$
+\hl{I}
+$V = $speed of sound in the system
+\hl{I}
+Make the integral dimensionless
+$X \equiv \frac{\pi \hbar V n}{L \tau}$ therefor $ U = (\frac{3\pi^2 \hbar v}{2L})(\frac{\tau L}{\pi \hbar v})^4 \int_0^{x_d} dx \frac{x^3}{e^x - 1}$
+\hl{I}
+$X_D = \frac{\pi \hbar v n_D}{L \tau} = \frac{\theta}{\tau}$ Debye temp $\theta = \hbar v (6\pi^2 \frac{N}{V})^{1/3}$
+\hl{I} 
+of particular interest: low 
+$\tau << \theta $ where $ x_D \rightarrow \infty$
+\hl{I}
+$U \approx \frac{3\pi^4 N \tau^4}{5 \sigma^3} \propto \tau^4$
+\hl{I}
+$C_v = (\frac{dU}{d\tau})_v \propto \tau^3$
+\hl{I}
+chemical potential and gibbs distribution, when two systems are in diffuse contact and can exchange particles, which way would the particles flow. 
+\hl{I}
+chemical potential $\mu$ flow form high $\mu$ to low $\mu$, diffusive contact - particles exchange, thermal contact - temperature exchange
+\hl{I}
+consider $s_1 + s_2$, $N_1 + N_1$, $V_1 + V_2$, $\tau$
+\hl{I}
+Helmholtz free energy F for $s_1 + s_2 \rightarrow$ minimum
+\hl{I}
+$F=F_1 + F_2 = U_1 + U_2 - \tau(\sigma_1 - \sigma_2)$
+\hl{I}
+Now consider a small variation
+\hl{I}
+$\partial N_1 =- \partial N_2$
+\hl{I}
+At equilibrium: $\partial F = (\frac{\partial F_1}{\partial N_1}) \partial N_1 + (\frac{\partial F_2}{\partial N_2})\partial N_2 = 0$
+\hl{I}
+equilibrium condition$ \Rightarrow (\frac{\partial F_1}{\partial N_1})_{T_1 V_1} = (\frac{\partial F_2}{\partial N_2})_{T_2 V_2} $
+\hl{I}
+Define: $\mu(T,V,N) \equiv (\frac{\partial F}{\partial N})_{\tau,V}$
+\hl{I}
+p: pressure $\partial \sigma = \frac{\partial u}{\tau} + \frac{P \partial v}{\tau}  $
+\hl{I}
+$\partial u = \tau \partial \sigma - p \partial v + \mu \partial N$
+\hl{I}
+Another expression for chemical potential
+\hl{I}
+$\mu = -\tau (\frac{\partial \sigma}{\partial N})_{U,V}$
+\hl{I}
+$\partial \sigma = (\frac{\partial \sigma}{\partial U})\partial U + (\frac{\partial \sigma}{\partial V})\partial V + (\frac{\partial \sigma}{\partial N})\partial N$
+\hl{I}
+$= \frac{1}{\tau} (\frac{\partial U}{\partial N})_{T,V} + (\frac{\partial \sigma}{\partial N})_{U,V}$
+\hl{I}
+$\mu = (\frac{\partial}{\partial N})_{T,V} (U-\tau \sigma)$
+\hl{I}
+$= (\frac{\partial U}{\partial N})_{T,V} - \tau (\frac{\partial \sigma}{\partial N})_{T,V}$
+\hl{I}
+$= -\tau (\frac{\partial \sigma}{\partial N})_{U,V}$
+\hl{I}
+next topic $U_0 = U + U_R$ and $N_0 =  N + N_R$, $S+R$ is an isolated system
+\colorbox{Cyan}{w11 d2 when system constant temperature and volume}
+$U_0 =U_R + U$
+\hl{I}
+$N_0=N_R+N \propto g(R,S) = g_R \cdot g_s = g_R \cdot 1$
+\hl{I}
+$P(s_n) \propto g_r (N_0 - N, U_0 - \epsilon_{sn})$
+\hl{I}
+$\frac{P(S_1,N_1)}{P(S_2,N_2)} = \frac{g_R(N_0 - N_1, U_0 - \epsilon_{S1})} {g_R(N_0 - N_2, U_0 - \epsilon_{S1})} $
+\hl{I}
+$\sigma_R = \ln g_R$
+\hl{I}
+$\frac{P(S_1)}{P(S_2)} = \frac{\exp[\sigma_R (\sigma_R(N_0 - N_1 , U_0 - \epsilon_{s1})] } {\exp[\sigma_R (\sigma_R(N_0 - N_2 , U_0 - \epsilon_{s2})] } =  \exp[\Delta \sigma_R] $
+\hl{I}
+$\Delta \sigma_R \equiv \sigma_R(\mu_0 - \mu_1, \mu_0 - \epsilon_{s1}) - \sigma_R(\mu_0 - \mu_2, \mu_0 - \epsilon_{s2})  $
+\hl{I}
+$\Delta \sigma_R = -(N_1 - N_2)(\frac{\partial \sigma_R}{\partial N_0})U_0 - (\epsilon_{s1} - \epsilon_{s2})(\frac{\partial \sigma_R}{\partial U_0})_{N0}$
+\hl{I}
+$=\frac{\Delta N}{\tau}\mu - \frac{\Delta \epsilon}{\tau}$
+\hl{I}
+$\frac{P(S_1,N_1)}{P(S_2,N_2)}=\frac{\exp[(N_1 \mu - \epsilon_{s1}) / \tau]}{\exp[(N_2 \mu - \epsilon_{s2}) / \tau]}$
+\hl{I}
+$P(s_N) = \frac{1}{Z_g} = \exp[(N\mu - \epsilon_s)/\tau]$
+\hl{I}
+$Z_g = \sum_{N=0}^{\infty}\sum_{S(n)} \exp[(N\mu - \epsilon_s)/\tau]$
+\hl{I}
+$\expval{N} = \frac{1}{Z_g} = \sum_{N} \sum_{S(N)} N P(S_n) = \frac{\tau}{Z_G} \frac{\partial Z_g}{\partial \mu} = \frac{\tau \partial \ln Z_g}{\partial \mu}$
+\hl{I}
+Approach number 1
+$\mu = (\frac{\partial F}{\partial N})_{T,V}$
+\hl{I}
+$F = -\tau \ln z$
+\hl{I}
+$\mu = (\frac{\partial F}{\partial N})_{\tau,V}$
+\hl{I}
+$F = -\tau \ln z$
+\hl{I}
+$Z_n = \frac{1}{N!}Z_1^N$
+\hl{I}
+$Z_1 = n_Q \cdot v$
+\hl{I}
+$F = -\tau [N\ln z_1 - \ln N!]$
+\hl{I}
+$\frac{\partial F}{\partial N} = [-\tau \ln z_1 + \partial N \ln (\frac{n}{e})^{n} \sqrt{2\pi n} $
+\hl{I}
+$(\frac{\partial F}{\partial N})_{T,V} = -\tau \ln \frac{n}{n_Q}$ and $density=\ln \frac{V}{N}$
+\hl{I}
+Approach 2 $\expval{N} = \tau \frac{\partial \ln Z_g}{\partial \mu} = z_1 e^{\mu/\tau}$
+\hl{l}
+$\mu = \tau \ln \frac{\expval{N}}{Z_1} = \tau \ln \frac{n}{n_Q} - density$
+\colorbox{Cyan}{w12 d1 Chemical Potential}
+$\mu_{tot}(h) = Mgh + c\ln (\frac{n(n)}{n_Q})$
+\hl{I}
+$\mu_{tot}(0)=\mu_{tot}(h)$
+\hl{I}
+$\mu_{tot}(h)=\mu_{tot}(h=0)$
+\hl{I}
+$Mgh + \tau \ln(\frac{n(h)}{n_Q}) = \tau \ln (\frac{n(0)}{n_Q})$
+\hl{I}
+$n(h) = \frac{n(0)}{e^{Mgh/\tau}}=n(0)e^{-Mgh/\tau}$
+\hl{I}
+$PV=nRT$
+\hl{I}
+$n_{\uparrow} = n(0) \frac{e^{2mB/\tau}}{e^{2mB/\tau}+1}$
+\hl{I}
+$n_{\downarrow} =  \frac{n(0)}{e^{2mB/\tau}+1}$
+\colorbox{Cyan}{w12 d2 chapter 6: ideal gas}
+$\mu_{tot}=\mu_{ext}+\mu_{int}$
+\hl{l}
+ideal gas in gravity
+\hl{I}
+$\mu_{int} = \tau \ln(\frac{n(h)}{n_Q})$
+\hl{I}
+$\mu_{ext} = Mgh$
+\hl{I}
+Identical particles: Fermions: $\frac{1}{2}$ integer spin, 0 or 1 on an orbital
+\hl{l}
+Bosons: integer spin, occupation number on an orbital can arbitrarily 0,1,2...
+\hl{I}
+Grand partition function $Z_g = \sum_{N} \sum_{Sn} e^{(\mu n - \epsilon_s)/\tau}$
+\hl{l}
+$\expval{N} = \frac{1}{Z_g} = \sum_{N} \sum_{Sn} N P(S_n)$
+\hl{I}
+Bose Einstein Distribution $f_{BE} = \frac{1}{e^{(\epsilon - \mu)/\tau} -1}$
+\hl{I}
+Fermi-Dirac Distribution $f_{FD} = \frac{1}{e^{(\epsilon - \mu)/\tau} +1}$
+\colorbox{Cyan}{w13 d1}
+For classical system 
+$\expval{N} = \lambda \sum_{orb} e^{-\epsilon/\tau}$
+\hl{I}
+$\lambda = e^{\mu / \tau}$
+\hl{I}
+In classical limit $f \approx e^{(\mu - \epsilon)/\tau}$
+\hl{I}
+$\mu = \tau \ln (\frac{n}{n_Q})$
+\hl{I}
+$F(N,V,\tau)=\int_{0}^{N} dN \cdot \mu (n,V,\tau)$
+\hl{I}
+$P=-(\frac{\partial F}{\partial V})_{T,N}=\frac{n\tau}{V}$
+\hl{I}
+Microstates: orbital + internal
+\hl{l}
+$\epsilon = \epsilon_n + \epsilon_{int}$
+\hl{I}
+One orbital $Z_{int} = \sum_{int} e^{-\epsilon_{int}/\tau}$
+\hl{I}
+Reversible isothermal expansion $p_f v_f = p_i v_i = N\tau$
+\hl{I}
+$\Delta \sigma = \sigma_f - \sigma_i$
+\hl{I}
+$\Delta \sigma = N\ln \frac{v_f}{v_i}$
+\hl{I}
+$\Delta U = 0$
+\hl{I}
+$U = \frac{3N \tau}{2}$
+\hl{I}
+$U_f = U_i$
+\hl{I}
+$Q = -W = N\tau \ln \frac{V_f}{V_i}$
+\hl{I}
+\colorbox{Cyan}{w13 d2 reversible expansion at constant entropy}
+$\sigma(\tau,V) = N(\ln \tau^{3/2} + \ln v + constant)$
+\hl{I}
+$\tau_{f}^{3/2} v_f = \tau_i^{3/2} v_i$
+\hl{I}
+$\tau_f = \tau_i (\frac{v_i}{v_f})^{2/3}$
+\hl{I}
+$PV=N\tau$
+\hl{I}
+$\Delta U = \frac{3}{2}N \Delta \tau$
+\hl{l}
+energy going out of the system is via the work
+\hl{I}
+Sudden expansion into a vacuum
+$W=0$ and $Q=0$ and $\Delta \tau = 0$ and $U_f = U_i$ and $U=\frac{3}{2}N\tau$ and $\sigma = N[\ln V + \ln \tau^{3/2} + constant]$ - Reversible process is an approximation
+$\Delta \sigma = N \ln \frac{V_f}{V_i}$
+\hl{I}
+\colorbox{Orange}{Chapter 7 Fermi and Bose Gas}
+\hl{I}
+For classical ideal gas
+$\mu = \tau \ln \frac{n}{n_Q}$
+\hl{I}
+$f_{Boltsman} = \frac{n}{n_Q} e^{\epsilon / \tau} << 1$
+\hl{I}
+$\frac{n}{n_Q} << 1$ classical regime $\geq 1$ quantum 
+\hl{I}
+In cases where n is fixed and $\tau$ adjustable
+$\tau_0 \equiv (\frac{2\pi \hbar^2}{M})n^{2/3}$
+\hl{I}
+Fermi gas
+$\expval{N} = \sum_{orbital}f_{orbital}(\mu, \tau)$
+\hl{I}
+$\epsilon_F = \frac{\hbar^2}{2m}(3 \pi^2 n)^{3/2}$
+\hl{I}
+what is total energy at ground state
+$U = 2\sum_{n < n_f} \epsilon_n = 2 \cdot \frac{1}{8} \cdot 4\pi \int_{0}^{n_F} dn n^2 \epsilon_n = \frac{3}{5} N \epsilon_F$
+\hl{I}
+Fermi gas
+How to determine $\epsilon_F$
+\hl{I}
+$\epsilon_F = \frac{\hbar^2}{2m}(3\pi^2 \frac{N}{V})^{3/2}$ Keep N constant $V_{\downarrow}$ and $\epsilon_{F}\uparrow$
+\hl{I}
+$\frac{U}{N}=\frac{3}{5}\epsilon_{F} \uparrow$
+\hl{I}
+symmetry -> effective repulsion
+\hl{I}
+\colorbox{Cyan}{w14 day 1}
+Fermi gas 
+$\expval{X} = \int \partial \epsilon D(\epsilon) f(\epsilon, \tau,\mu) x(\epsilon)$
+\hl{I}
+How to calculate $D(\epsilon)$ density of states
+\hl{I}
+$N(\epsilon) = (\frac{V}{3\pi^2})(\frac{2m}{\hbar^2})^{3/2} (\epsilon)^{3/2}$ total number of states under $\epsilon$
+\hl{I}
+$D(\epsilon)=\frac{\partial N}{\partial \epsilon} = \frac{3N}{2\epsilon} = \frac{V}{(2\pi^2)}(\frac{2m}{\hbar^2})^{3/2} \epsilon^{1/2}$
+\hl{I}
+In high $\tau$ classical $c_v \approx \frac{3}{2} K_B N$
+\hl{I}
+$c_v \approx N \frac{\tau}{\epsilon_F} \propto \tau$ quantum
+\hl{I}
+what is low $\tau$
+\hl{I}
+$\epsilon_F = \frac{\hbar^2}{2m}(3\pi^2 n)^{2/3}$
+\hl{I}
+for $Cu: n = 8.\tau \times 10^{28} m^{-3}$
+\hl{I}
+for room temperature $\frac{\epsilon_F}{\tau} \approx 260 >> 1$
+\colorbox{Cyan}{w14 day 2 Bose Gas and Bose Einstein}
+$N = \int \partial \epsilon f(\epsilon, \tau, \mu) D(\epsilon)$
+ground state $(\tau = 0)$
+\hl{I}
+all particle occupy the ground orbital $\rightarrow \epsilon = 0$
+\hl{I}
+$f(\epsilon = 0, \tau) = \frac{1}{e^{-\mu / \tau} -1} \geq 0$
+\hl{I}
+$\mu \leq 0$
+\hl{I}
+At $\tau$ small $f(0,\tau) \approx \frac{1}{(1-\frac{\mu}{\tau})-1}=\frac{-\tau}{\mu}$
+\hl{I}
+$\frac{-\tau}{\mu} \approx N$ close to zero
+\hl{I}
+$\frac{U}{N} \approx \frac{3}{2}\tau + 0 \frac{1}{N}$ take thermodynamic limit at the ver last state
+\hl{I}
+occupancy $N_0 + N_e = N$
+\hl{I}
+$N_0 (\tau,\mu) = \frac{1}{e^{-\mu / \tau} -1} = \frac{1}{\lambda^{-1} -1}$
+\hl{I}
+$N_e (\tau,\mu) \approx \frac{V}{4\pi^2} (\frac{2M}{\hbar^2})^{3/2} \tau^{3/2} \int_{0}^{\infty} dx \frac{x^{1/2}}{e^x - 1} $
+\hl{I}
+$\frac{N_0}{N} = 1 - \frac{N_e}{N}$
+\hl{I}
+BE condensation
+$\tau_{E} \equiv \frac{2 \pi \hbar^2}{M}(\frac{N}{2.612 V})^{2/3}$
+\hl{I}
+$\frac{N_0}{N}=1-(\frac{T}{T_E})^{3/2}$
+\hl{I}
+The critical temperature does not scale linearly with N anymore
+\hl{I}
+\colorbox{Orange}{chapter 8 hear transfer and work are path dependent}
+\hl{I}
+$\partial U  = \partial Q + \partial \omega$
+\hl{I}
+$dQ \equiv \tau \partial \sigma$
+\hl{I}
+$\partial \omega = -\rho \partial V$
+\hl{I}
+heat transfer and work are path dependent, work 100 percent to heat, however not hear to work, there is directionality
+\hl{I}
+pay price from going from disorder to order
+\colorbox{Cyan}{w15 day 1 thermal engine}
+First Law $\partial U = Q + W$
+\hl{I}
+Second law: difference between heat and work
+\hl{I}
+$(\Delta \sigma_{total}) = (\Delta \sigma)_{RL} + (\Delta \sigma)_s = \frac{-Q_h}{\tau_h} + \frac{-Q_l}{\tau_l} + 0 $
+\hl{I}
+Efficiency $\eta = \frac{\omega}{Q_n} = \frac{Q_n - Q_l}{Q_n} = 1 - \frac{Q_l}{Q_h}$
+\hl{I}
+For a reversible cycle $\eta = 1-\frac{\tau_l}{\tau_h}$ upper limit for efficiency of thermal energy
+\hl{I}
+$\eta_c = $ carnot efficiency $ =1 - \frac{\tau_e}{\tau_h}$
+\hl{I}
+$\eta \leq \eta_c$
+\hl{I}
+Refrigerator/air conditioner
+$(\Delta \sigma)_{total entropy} = \frac{Q_h}{\tau_h} - \frac{Q_l}{\tau_l} \geq 0 $
+\hl{I}
+$\Rightarrow \gamma \leq \gamma_c$
+\hl{I}
+$\gamma_c = \frac{\tau_{\gamma}}{\tau_{h}-\tau_{l}}$ achievable only for a reversible process
+\hl{I}
+isothermal expansion, isothermal expansion, realization of carnot engine classification ideal gas -> reversible cycle
+\hl{I}
+\colorbox{Cyan}{w15 day 2}
+isothermal $Q_{12} = \tau_{h}(\sigma_h -\sigma_l)$ and $Q_{34} = \tau_{l}(\sigma_h -\sigma_l)$
+\hl{I}
+isentropic $Q_{23} = 0$ and $Q_{41} = 0$ 
+\hl{I}
+$W=|Q_{12}| - |Q_{34}| = (\tau_h - \tau_{l}) \cdot \Delta \sigma = $ area
+\hl{I}
+isothermal $PV = N\tau$
+\hl{I}
+isentropic$P V^{\gamma} = constant$ where $ \gamma >1$
+\hl{I}
+$1 \rightarrow 2$ Isothermal expansion $\Delta = 0$ and $PV = constant$ and $P=Cont \cdot \frac{1}{V}$
+and $|Q_{12}| = |W_{12}| = \int p \partial V = N \tau_N \ln(\frac{v2}{v1})$
+\hl{I}
+objective $\eta = \frac{W}{Q_h}$
+\hl{I}
+$Q_h = n \tau_h \ln \frac{v2}{v1}$
+\hl{I}
+$W = |Q_h|-|Q_l| = N \tau \ln(\frac{v2}{v1}) - N \tau \ln(\frac{v3}{v4})  $
+\hl{I}
+$\eta = \frac{w}{Q_n} = \frac{\tau_n - \tau_{l}}{\tau_h} = 1 - \frac{\tau_l}{\tau_h}$ carnot cycle has carnot efficeicny
+\hl{I}
+Irreversible cycle $\Delta \tau = (\tau_R - \tau_D) \approx 0$
+\hl{I}
+reversible cycle $\Delta \sigma_s = \int \frac{\partial \sigma}{\tau}$ in reversible there is no net entropy increase
+\hl{I}
+$\Delta \sigma_R = \int \frac{- \partial \sigma}{\tau}$
+\hl{I}
+$\Delta \sigma_{total} =0$
+\colorbox{Cyan}{w16 day 1 chemical work}
+$\partial U = \partial Q + \partial \omega - p \partial v$
+Chemical work: work performed by the transfer of particles
+\hl{I}
+$U(\sigma, V,N) \approx \partial U = \tau \partial \sigma - p \partial v + \mu \partial N$ chemical work
+\hl{I}
+$\partial \omega = -p \partial v + \mu \partial N$
+\hl{I}
+Assuming no mechanical work for
+$\partial w_{l} = \partial w_{c1} + \partial w_{c2} = M_2 \partial N_1 + M_2 \partial N_2$ - total number of particles
+\hl{I}
+ideal gas $\mu = \tau \ln(\frac{n}{n_Q})$
+\hl{I}
+$\mu_2 + \mu_1 = \tau \ln(\frac{n_2}{n_1})$
+\hl{I}
+$W_c = \tau \ln (\frac{n_2}{n_1})\Delta N$
+\hl{I}
+Why G $\partial G = \partial U - \partial(\tau \sigma) + \partial(pv)$
+\hl{I}
+What happens for spontaneous charges
+$\Delta \sigma_{total} = \Delta \sigma_s - \frac{Q_s}{\tau}$
+\hl{I}
+$\Delta Q_s \leq W_s^1$ does not incur reversibility
+\hl{I}
+Simple case if $\omega_s^1 = 0$ the process is reversible, $\Delta G_s = 0$ 
+\hl{I}
+$G_s$ reaches minimum when equilibrium 
+\hl{I}
+$W_s \neq 0$ and $\partial w_s^1 = \mu \partial N$
+\hl{I}
+$G_F - G_i \leq \omega_s^1$
+\hl{I}
+the maximum amount of work the system can deliver the decrease in Gibbs free energy. 
+\hl{I}
+Now lets $\partial \omega^1 = \mu \partial N$
+\hl{I}
+Extensive and Intensive Quantity
+$G_{total} = G_{1+2}=G_1 + G_2 = 2G_1$
+\hl{I}
+$U_{total} = U_1 + U_2 = 2U_1$
+\hl{I}
+intensive quantities, no dependence on number of particles, $\tau$ temperature, $P$ pressure, $n$ density, $\mu$ chemical potential
+\hl{I}
+extensive quantities, dependence on number of particles, $\sigma$ entropy, $F$ free energy, $V$ volume, $N$ number of particles
+\hl{I}
+ Example of simple ideal gas $\mu = \tau \ln (\frac{n}{n_Q}) = \tau \ln (\frac{p}{n_Q \tau})$
+ \hl{l}
+ $F(T,V,\mu) = N\tau [\ln (\frac{n}{n_Q})-1]$
+ \hl{I}
+ Gibbs free energy $G=F+pV=N \tau \ln (\frac{n}{n_Q}) = N \mu$
+
+\end{document}  
+
